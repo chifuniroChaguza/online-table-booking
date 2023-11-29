@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".table_manage">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/TableManageActLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/TVTableManageAct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.ActionBar"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_ios_24" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/AddLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TableManageActLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RVTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:scrollbars="horizontal"
+                tools:listitem="@layout/table_list_section"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/AddLayout"
+        android:paddingBottom="20dp"
+        android:layout_marginBottom="-10dp"
+        android:layout_marginStart="-10dp"
+        android:layout_marginEnd="-10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/btnAdd"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:dividerColor="?colorOnBackground"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Click the table above to Update\nLong Click to Delete"
+            android:textColor="?colorPrimary"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/AddTable"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Add Table"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/addtableName"
+                style="@style/TextAppearance.AppCompat.Menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Table Name: " />
+
+            <EditText
+                android:id="@+id/addTableName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="12"
+                android:hint="Table Name"
+                android:inputType="textPersonName"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tableSize"
+                style="@style/TextAppearance.AppCompat.Menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Table Pax:" />
+
+            <EditText
+                android:id="@+id/editTablePax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="12"
+                android:hint="Table Pax"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:inputType="number"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="?colorPrimary"
+        android:text="ADD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCancel"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:text="Cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/btnAdd"
+        app:layout_constraintWidth_percent="0.3" />
+</androidx.constraintlayout.widget.ConstraintLayout>

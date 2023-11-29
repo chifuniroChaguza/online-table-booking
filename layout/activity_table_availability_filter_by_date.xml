@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TableAvailabilityFilterByDate">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_baseline_arrow_back_ios_24" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/butConfirm"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/PickDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Pick a date: "
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <DatePicker
+                android:id="@+id/datepicker"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:calendarTextColor="?colorOnBackground"
+                android:headerBackground="?colorPrimary" />
+
+            <TextView
+                android:id="@+id/pickTimeS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Pick Start Time:"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TimePicker
+                android:id="@+id/timepickerS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:numbersBackgroundColor="#FFFFFF"
+                android:numbersSelectorColor="#C1121F"
+                android:numbersTextColor="?colorOnBackground"
+                android:timePickerMode="spinner" />
+
+            <TextView
+                android:id="@+id/pickTimeE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Pick End Time:"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TimePicker
+                android:id="@+id/timepickerE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:numbersBackgroundColor="#FFFFFF"
+                android:numbersSelectorColor="#C1121F"
+                android:numbersTextColor="?colorOnBackground"
+                android:timePickerMode="spinner" />
+
+        </LinearLayout>
+    </ScrollView>
+    <Button
+        android:id="@+id/butConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="Confirm"
+        android:layout_marginBottom="-8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
