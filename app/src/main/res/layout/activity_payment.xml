@@ -4,13 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EC910A"
-    tools:context=".MainActivity">
+    tools:context=".Payment">
 
     <ImageView
-        android:id="@+id/logo_image"
-        android:layout_width="match_parent"
-        android:layout_height="621dp"
-        android:src="@drawable/foodie" />
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/pay"></ImageView>
 
 </LinearLayout>
